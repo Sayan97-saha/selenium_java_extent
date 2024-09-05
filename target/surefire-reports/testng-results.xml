@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-09-05T22:24:56 IST" name="Suite" finished-at="2024-09-05T22:25:10 IST" duration-ms="13361">
+    <groups>
+      <group name="cucumber">
+        <method signature="Cucumber_Runner.scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" name="scenario" class="auto_runner.Cucumber_Runner"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-09-05T22:24:56 IST" name="Test" finished-at="2024-09-05T22:25:10 IST" duration-ms="13361">
+      <class name="auto_runner.Cucumber_Runner">
+        <test-method is-config="true" signature="setup_extent()[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" started-at="2024-09-05T22:24:56 IST" name="setup_extent" finished-at="2024-09-05T22:24:56 IST" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup_extent -->
+        <test-method is-config="true" signature="set_up_class()[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" started-at="2024-09-05T22:24:56 IST" name="set_up_class" finished-at="2024-09-05T22:24:56 IST" duration-ms="128" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- set_up_class -->
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" started-at="2024-09-05T22:24:57 IST" name="scenario" description="Runs Cucumber Feature" data-provider="features" finished-at="2024-09-05T22:25:04 IST" duration-ms="7529" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Testing the new user Registration UI functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Testing the Parabank website"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method is-config="true" signature="after_test()[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" started-at="2024-09-05T22:25:04 IST" name="after_test" finished-at="2024-09-05T22:25:04 IST" duration-ms="132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after_test -->
+        <test-method signature="scenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" started-at="2024-09-05T22:25:04 IST" name="scenario" description="Runs Cucumber Feature" data-provider="features" finished-at="2024-09-05T22:25:10 IST" duration-ms="5408" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Testing the new user Registration UI functionality"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Testing the Parabank website"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method is-config="true" signature="after_test()[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" started-at="2024-09-05T22:25:10 IST" name="after_test" finished-at="2024-09-05T22:25:10 IST" duration-ms="137" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after_test -->
+        <test-method is-config="true" signature="tear_down_class()[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" started-at="2024-09-05T22:25:10 IST" name="tear_down_class" finished-at="2024-09-05T22:25:10 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tear_down_class -->
+        <test-method is-config="true" signature="terminate_driver()[pri:0, instance:auto_runner.Cucumber_Runner@2f4948e4]" started-at="2024-09-05T22:25:10 IST" name="terminate_driver" finished-at="2024-09-05T22:25:10 IST" duration-ms="239" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminate_driver -->
+      </class> <!-- auto_runner.Cucumber_Runner -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
