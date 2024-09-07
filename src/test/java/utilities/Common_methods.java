@@ -15,14 +15,19 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 
 import page_validation.Base_class;
-import page_validation.Base_class;
 
-public class Common_methods extends Base_class{
+public class Common_methods {
+	
+	private Base_class base_class;
+	
+	public Common_methods(Base_class base_class) {
+		this.base_class = base_class;
+	}
 	
 	public boolean click_on(WebElement element) {
 		boolean res = false;
 		try {
-			Base_class.actions_obj.moveToElement(element).build().perform();
+			base_class.actions_obj.moveToElement(element).build().perform();
 			element.click();
 			res = true;
 		}
@@ -35,7 +40,7 @@ public class Common_methods extends Base_class{
 	public boolean send_values(WebElement element, String str_value) {
 		boolean res = false;
 		try {
-			Base_class.actions_obj.moveToElement(element).build().perform();
+			base_class.actions_obj.moveToElement(element).build().perform();
 			element.sendKeys(str_value);
 			res = true;
 		}
@@ -48,7 +53,7 @@ public class Common_methods extends Base_class{
 	public void setup_wait() throws Throwable {
 		try {
 			int wait_time = Integer.valueOf(Read_config.get_from_config("wait_time"));
-			Base_class.wait_obj = new WebDriverWait(Base_class.driver, 
+			base_class.wait_obj = new WebDriverWait(base_class.driver, 
 					Duration.ofSeconds(wait_time));
 			System.out.println("Explicit wait has been setup as " + wait_time + " seconds");
 		}
@@ -62,11 +67,11 @@ public class Common_methods extends Base_class{
 		try {
 			switch(wait_type) {
 			case("visible"):
-				Base_class.wait_obj.until(ExpectedConditions.visibilityOf(element));
+				base_class.wait_obj.until(ExpectedConditions.visibilityOf(element));
 				break;
 			case("clickable"):
-				Base_class.wait_obj.until(ExpectedConditions.elementToBeClickable(element));
-				Base_class.actions_obj.moveToElement(element).build().perform();
+				base_class.wait_obj.until(ExpectedConditions.elementToBeClickable(element));
+				base_class.actions_obj.moveToElement(element).build().perform();
 				break;
 			}
 			res = true;
@@ -80,7 +85,7 @@ public class Common_methods extends Base_class{
 	public WebElement find_element(String xpath_val) {
 		WebElement element = null;
 		try {
-			element = Base_class.driver.findElement(By.xpath(xpath_val));
+			element = base_class.driver.findElement(By.xpath(xpath_val));
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -91,7 +96,7 @@ public class Common_methods extends Base_class{
 	public List<WebElement> find_elements(String xpath_val) {
 		List<WebElement> elements = null;
 		try {
-			elements = Base_class.driver.findElements(By.xpath(xpath_val));
+			elements = base_class.driver.findElements(By.xpath(xpath_val));
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -120,15 +125,16 @@ public class Common_methods extends Base_class{
 		return result_val;
 	}
 	
-	public void assertion_method(boolean var, String log_msg) throws Throwable {
+	public void assertion_method(String step_name, boolean var, String log_msg) throws Throwable {
 		try {
-			String screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+			
+			String screenshot = ((TakesScreenshot) base_class.driver).getScreenshotAs(OutputType.BASE64);
 			if(var == true) {
-				extent_test_obj.createNode(new GherkinKeyword("Given"), StepDetails.stepName).log(Status.PASS, 
+				base_class.extent_test_obj.createNode(new GherkinKeyword("Given"), step_name).log(Status.PASS, 
 						log_msg, MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
 			}
 			else {
-				extent_test_obj.createNode(new GherkinKeyword("Given"), StepDetails.stepName).log(Status.FAIL, log_msg);
+				base_class.extent_test_obj.createNode(new GherkinKeyword("Given"), step_name).log(Status.FAIL, log_msg);
 			}
 		}
 		catch(Exception e) {

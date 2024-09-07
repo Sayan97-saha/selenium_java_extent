@@ -5,9 +5,10 @@ import org.openqa.selenium.chrome.*;
 
 import page_validation.*;
 
-public class Driver_manager extends Base_class{
+public class Driver_manager{
 	
 	public static WebDriver create_driver(String browser_name) {
+		WebDriver driver = null;
 		System.out.println("Inside create_driver --->");
 		try {
 			if(browser_name.equalsIgnoreCase("chrome")) {

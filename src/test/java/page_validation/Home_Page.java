@@ -9,8 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import utilities.Read_config;
 
-public class Home_Page extends Base_class{
-	
+public class Home_Page {
+	private Base_class base_class;
 	
 	@FindBy(xpath = "//button[text()='✕']")
 	private List<WebElement> close_login_popup;
@@ -27,8 +27,9 @@ public class Home_Page extends Base_class{
 	@FindBy(xpath = "//div[@id='rightPanel']/p")
 	private WebElement right_panel_msg;
 	
-	public Home_Page(WebDriver driver) {
-		PageFactory.initElements(driver, this);
+	public Home_Page(Base_class base_class) {
+		this.base_class = base_class;
+		PageFactory.initElements(base_class.driver, this);
 	}
 	
 	
@@ -63,13 +64,13 @@ public class Home_Page extends Base_class{
 		boolean res = false;
 		String log_text = "";
 		try {
-			Base_class.cmn_mthds.click_on(register_link);
-			capture_screenshot();
-			cmn_mthds.custom_wait("visible", right_panel_header);
-			cmn_mthds.custom_wait("visible", right_panel_msg);
+			base_class.cmn_mthds.click_on(register_link);
+			base_class.capture_screenshot();
+			base_class.cmn_mthds.custom_wait("visible", right_panel_header);
+			base_class.cmn_mthds.custom_wait("visible", right_panel_msg);
 			
-			String panel_header_txt_actual = cmn_mthds.get_from_element(right_panel_header, "text");
-			String panel_msg_txt_actual = cmn_mthds.get_from_element(right_panel_msg, "text");
+			String panel_header_txt_actual = base_class.cmn_mthds.get_from_element(right_panel_header, "text");
+			String panel_msg_txt_actual = base_class.cmn_mthds.get_from_element(right_panel_msg, "text");
 			String panel_header_txt_expctd = Read_config.get_from_config("register_panel_header");
 			String panel_msg_txt_expctd = Read_config.get_from_config("register_panel_msg");
 			
@@ -83,8 +84,8 @@ public class Home_Page extends Base_class{
 			else {
 				log_text = "Validation failed!" + "\n" + log_text;
 			}
-			extent_log_msg = log_text;
-			step_log(log_text);
+			base_class.extent_log_msg = log_text;
+			base_class.step_log(log_text);
 		}
 		catch(Exception e) {
 			e.printStackTrace();

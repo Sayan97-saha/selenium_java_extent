@@ -53,14 +53,5 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/IT/java_practice/jar_files/custom_mvn_repo/com/aventstack/extentreports/5.1.2/extentreports-5.1.2.jar" sourcepath="D:/IT/java_practice/jar_files/custom_mvn_repo/com/aventstack/extentreports/5.1.2/extentreports-5.1.2-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="com.aventstack"/>
-			<attribute name="maven.artifactId" value="extentreports"/>
-			<attribute name="maven.version" value="5.1.2"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
